@@ -11,15 +11,15 @@
     <form id="pairingForm" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="number" class="form-label">Enter Phone Number</label>
-            <input type="text" id="number" class="form-control" placeholder="Phone number (with country code)">
+            <input type="text" id="number" class="form-control" placeholder="Phone number (with country code)" required>
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Upload Profile Picture</label>
-                    <input type="file" name="image" id="image" accept="image/*" required>
+            <input type="file" name="image" id="image" accept="image/*" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-            <div class="mt-4" id="codeSection" style="display: none;">
+    <div class="mt-4" id="codeSection" style="display: none;">
         <h3>Pairing Code</h3>
         <p id="pairingCode"></p>
     </div>
@@ -48,5 +48,4 @@
         });
     </script>
 </body>
-    </html>
-    
+</html>
