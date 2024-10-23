@@ -1,25 +1,18 @@
 const express = require('express');
 const path = require('path');
-const app = express();
-const profileRouter = require('./routes/profile');
+const connectRoute = require('./routes/connect');
 
-// Middleware for parsing form data
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, 'Meera')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from "public" folder
-app.use(express.static(path.join(__dirname, 'Meera')));
+// Routes
+app.use('/connect', connectRoute);
 
-// Use the profile router for handling WhatsApp profile updates
-app.use('/api/profile', profileRouter);
-
-// Home route for the form submission page
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Meera/index.html'));
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+// Server start
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
