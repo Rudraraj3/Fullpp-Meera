@@ -1,0 +1,16 @@
+{
+  "name": "whatsapp-profile-updater",
+  "version": "1.0.0",
+  "description": "Change WhatsApp profile picture using Baileys",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "express": "^4.18.2",
+    "jimp": "^0.16.1",
+    "multer": "^1.4.5-lts.1",
+    "pino": "^8.3.0"
+  }
+}
